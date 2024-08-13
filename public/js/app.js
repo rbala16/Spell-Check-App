@@ -1,15 +1,14 @@
-const { response } = require("express");
 const spellCheckForm = document.getElementById('spellcheck-form');
 const outputField = document.getElementById('output');
 
 // const textInput = document.getElementById('text-input');
 
-function spellcheck(event){
+spellCheckForm.addEventListener('submit',function(event){
     event.preventDefault();
 
     const textInput = document.getElementById('text-input').value;
 
-    fetch('js/spellcheck',{
+    fetch('/spellcheck',{
         method:'POST',
         headers:{
             'Content-Type':'application/json',
@@ -25,6 +24,5 @@ function spellcheck(event){
         outputField.textContent = 'An error occurred while checking the spelling.';
     });
 
-}
+})
 
-spellCheckForm.addEventListener('submit',spellcheck(e));
