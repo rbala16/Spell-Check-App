@@ -9,6 +9,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname,'public')));
 
 app.post('/spellcheck',(req,res)=>{
+  // text sent by the user is extracted from req.body
   const {text} = req.body;
 
 spellcheck(text, (error, data) => {
