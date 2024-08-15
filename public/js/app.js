@@ -7,7 +7,7 @@ spellCheckForm.addEventListener('submit',function(event){
     event.preventDefault();
 
     const textInput = document.getElementById('text-input').value;
-
+//sending a post request to the server with user input
     fetch('/spellcheck',{
         method:'POST',
         headers:{
